@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <div class="outer-div">
+        <h2 style="text-align:center; margin-bottom: 20px; font-size: 2em; color:
+         #2e7d32;margin-top:-10px;font-weight:200">🌿 My To-Do List</h2>
+        <!-- <div class="input-div"> -->
+            <input type="text" id="input_task" class="input_task" placeholder="Enter new task...">
+            <button id="add"> ➕ Add</button>
+        <!-- </div> -->
+        <div class="tasks">
+            <div class="task_div">
+                <p>Learn a new concept</p>
+                <div class="inner">
+                    <button class="done">✅Done</button>
+                    <button class="btn">🗑️Delete</button>
+                </div>
+            </div>
+            <div class="task_div">
+                <p>Go for a walk</p>
+                <div class="inner">
+                    <button class="done">✅Done</button>
+                    <button class="btn">🗑️Delete</button>
+                </div>
+            </div>
+            <div class="task_div">
+                <p>Code one problem</p>
+                <div class="inner">
+                    <button class="done">✅Done</button>
+                    <button class="btn">🗑️Delete</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        var input_task = document.getElementById("input_task");
+        var add = document.getElementById("add")
+        var tasks = document.querySelector(".tasks");
+        var task_div = document.querySelector(".task_div");
+
+        add.addEventListener("click", function (event) {
+
+            event.preventDefault();
+            var listitem = document.createElement("div");
+            listitem.className = "task_div";
+            var p = document.createElement("p")
+            p.textContent = input_task.value;
+            if (p.textContent == "") {
+                alert("Kindly enter the task")
+            }
+            else {
+                var inner = document.createElement("div")
+                var button = document.createElement("button")
+                button.textContent = "🗑️Delete"
+                button.className = "btn"
+                listitem.append(p)
+                var done = document.createElement("button")
+                done.textContent = "✅Done"
+                done.className = "done"
+                inner.append(done)
+                inner.appendChild(button)
+                inner.className = "inner"
+                listitem.append(inner)
+                tasks.append(listitem)
+
+            }
+        })
+
+        tasks.addEventListener("click", function (event) {
+            if (event.target.classList.contains("btn")) {
+                event.preventDefault();
+                event.target.parentElement.parentElement.remove();
+            }
+        })
+        tasks.addEventListener("click", function (event) {
+            if (event.target.classList.contains("done")) {
+                event.preventDefault();
+                event.target.parentElement.parentElement.querySelector("p").style.textDecoration = "line-through";
+                event.target.parentElement.parentElement.style.backgroundColor = "#e8f5e9"
+                event.target.parentElement.parentElement.querySelector("p").style.color = "grey"
+                event.target.textContent = "✅ Undo"
+                event.target.className = "undo"
+
+            }
+            else {
+                event.preventDefault();
+                event.target.parentElement.parentElement.querySelector("p").style.textDecoration = "none";
+                event.target.parentElement.parentElement.style.backgroundColor = "#FFF"
+                event.target.parentElement.parentElement.querySelector("p").style.color = "black"
+                event.target.textContent = "✅ Done"
+                event.target.className = "done"
+
+            }
+        });
+    </script>
+</body>
+
+</html>
