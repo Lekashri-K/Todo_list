@@ -1328,11 +1328,68 @@
 
     <script>
      document.addEventListener('DOMContentLoaded', function () {
-    // ========== API KEY CONFIGURATION ==========
-    // No hardcoded key - users will enter it in the UI
-    let GEMINI_API_KEY = localStorage.getItem('flowtask_gemini_api_key') || '';
+    // ========== ENVIRONMENT VARIABLE CONFIGURATION ==========
+    // For deployment, set these environment variables:
+    // 1. REACT_APP_GEMINI_API_KEY (for Create React App)
+    // 2. VITE_GEMINI_API_KEY (for Vite)
+    // 3. GEMINI_API_KEY (generic)
+    // 4. Or use window._env_ for static hosting
+    // ========================================================
+    
+    let GEMINI_API_KEY = '';
     const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
-    // ===========================================
+    
+    // Function to load API key from environment variables
+    function loadApiKeyFromEnv() {
+        // Priority 1: Vite environment variable
+        if (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_GEMINI_API_KEY) {
+            GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
+            console.log('Loaded API key from Vite env');
+            return true;
+        }
+        
+        // Priority 2: Create React App environment variable
+        if (typeof process !== 'undefined' && process.env && process.env.REACT_APP_GEMINI_API_KEY) {
+            GEMINI_API_KEY = process.env.REACT_APP_GEMINI_API_KEY;
+            console.log('Loaded API key from React env');
+            return true;
+        }
+        
+        // Priority 3: Generic environment variable
+        if (typeof process !== 'undefined' && process.env && process.env.GEMINI_API_KEY) {
+            GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+            console.log('Loaded API key from generic env');
+            return true;
+        }
+        
+        // Priority 4: Window environment (for static hosting)
+        if (window._env_ && window._env_.GEMINI_API_KEY) {
+            GEMINI_API_KEY = window._env_.GEMINI_API_KEY;
+            console.log('Loaded API key from window._env_');
+            return true;
+        }
+        
+        // Priority 5: Config object
+        if (window.FLOWTASK_CONFIG && window.FLOWTASK_CONFIG.GEMINI_API_KEY) {
+            GEMINI_API_KEY = window.FLOWTASK_CONFIG.GEMINI_API_KEY;
+            console.log('Loaded API key from FLOWTASK_CONFIG');
+            return true;
+        }
+        
+        // Priority 6: User's localStorage (for backward compatibility)
+        const storedKey = localStorage.getItem('flowtask_gemini_api_key');
+        if (storedKey && storedKey.length > 30 && storedKey.startsWith('AIza')) {
+            GEMINI_API_KEY = storedKey;
+            console.log('Loaded API key from localStorage');
+            return true;
+        }
+        
+        console.log('No API key found in environment');
+        return false;
+    }
+    
+    // Load API key from environment
+    const hasEnvApiKey = loadApiKeyFromEnv();
     
     // DOM Elements
     const inputTask = document.getElementById('input_task');
@@ -1370,9 +1427,10 @@
     let botActiveTask = null;
     let userPreferences = JSON.parse(localStorage.getItem('flowTaskPrefs')) || {
         showBotSuggestions: true,
-        useAI: false,
+        useAI: hasEnvApiKey, // Auto-enable AI if env key found
         apiKeyTested: false,
-        apiKeyValid: false
+        apiKeyValid: false,
+        isAdmin: false // For admin features
     };
     
     // Initialize
@@ -1384,9 +1442,16 @@
         addSampleTasks();
     }
     
-    // Initialize bot - show welcome message
+    // Check if this is a deployment with admin key
+    const isAdminDeployment = hasEnvApiKey && !userPreferences.apiKeyTested;
+    
+    // Initialize bot - show appropriate message
     setTimeout(() => {
-        showBotWelcomeMessage();
+        if (isAdminDeployment) {
+            showAdminWelcomeMessage();
+        } else {
+            showBotWelcomeMessage();
+        }
     }, 1000);
     
     // ========== EVENT LISTENERS ==========
@@ -1435,123 +1500,82 @@
     
     // ========== FUNCTIONS ==========
     
-    // 🔑 SHOW API KEY INPUT IN BOT
-    function showApiKeyInput() {
-        const apiKeyDiv = document.createElement('div');
-        apiKeyDiv.className = 'bot-message';
-        
-        apiKeyDiv.innerHTML = `
-            <strong>🔑 Enter Your Gemini API Key</strong><br><br>
-            <p style="font-size: 0.9rem; margin-bottom: 15px;">
-                Get your free API key from: 
-                <a href="https://makersuite.google.com/app/apikey" target="_blank" style="color: var(--primary);">
-                    Google AI Studio
-                </a>
-            </p>
-            
-            <div style="margin-bottom: 15px;">
-                <input type="password" 
-                       id="apiKeyInput" 
-                       placeholder="Paste your Gemini API key here" 
-                       style="width: 100%; padding: 12px; border-radius: 8px; border: 2px solid var(--card-border); background: var(--bg-secondary); color: var(--text-primary); font-family: inherit;">
-                <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 5px;">
-                    Your key is saved locally and never sent to our servers
-                </div>
-            </div>
-            
-            <div class="bot-actions">
-                <button class="bot-btn bot-btn-yes" id="saveApiKeyBtn">
-                    <i class="fas fa-save"></i> Save & Test Key
-                </button>
-                <button class="bot-btn bot-btn-no" id="skipApiKeyBtn">
-                    <i class="fas fa-bolt"></i> Use Smart Rules
-                </button>
-            </div>
-            
-            <div style="margin-top: 15px; padding: 10px; background: rgba(245, 158, 11, 0.1); border-radius: 8px; font-size: 0.85rem;">
-                <i class="fas fa-info-circle" style="color: var(--warning);"></i>
-                Without an API key, I'll use smart rules to break down tasks.
-            </div>
-        `;
-        
-        botBody.appendChild(apiKeyDiv);
-        botBody.scrollTop = botBody.scrollHeight;
-        
-        // Pre-fill if we have a key
-        if (GEMINI_API_KEY) {
-            document.getElementById('apiKeyInput').value = GEMINI_API_KEY;
-        }
-        
-        // Add event listeners
-        document.getElementById('saveApiKeyBtn').addEventListener('click', saveAndTestApiKey);
-        document.getElementById('skipApiKeyBtn').addEventListener('click', () => {
+    // 🔑 ADMIN WELCOME MESSAGE (for deployment with env key)
+    function showAdminWelcomeMessage() {
+        // First test the API key
+        testAPIKey(GEMINI_API_KEY).then(isValid => {
+            if (isValid) {
+                userPreferences.useAI = true;
+                userPreferences.apiKeyValid = true;
+                userPreferences.isAdmin = true;
+                savePreferences();
+                
+                showBotMessage("🚀 **Admin Deployment Detected!**\n\n" +
+                    "Your Gemini API key is configured via environment variables.\n\n" +
+                    "• AI features are **enabled** for all users\n" +
+                    "• No API key input required from users\n" +
+                    "• Smart fallback is still available\n\n" +
+                    "Ready to break down tasks with AI! 🤖");
+                
+                showNotification('✅ AI Assistant ready (Admin Mode)', 'success');
+                
+                // Add admin badge to header
+                addAdminBadge();
+            } else {
+                userPreferences.useAI = false;
+                savePreferences();
+                showBotMessage("⚠️ **Admin Deployment - API Key Issue**\n\n" +
+                    "Found environment API key but it failed validation.\n\n" +
+                    "• Falling back to smart rules\n" +
+                    "• Users can still enter their own keys\n" +
+                    "• Check your environment variable configuration");
+                
+                showNotification('Environment API key invalid', 'warning');
+            }
+        }).catch(() => {
             userPreferences.useAI = false;
             savePreferences();
-            showBotMessage("👍 Using smart rules! I'll help break down your tasks with my built-in intelligence.");
-            showNotification('Using smart rules for task breakdown', 'info');
-        });
-        
-        // Also allow Enter key
-        document.getElementById('apiKeyInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                saveAndTestApiKey();
-            }
+            showBotMessage("Hi! I'm your FlowTask Assistant. I'll use smart rules to help break down your tasks.");
         });
     }
     
-    // 🔑 SAVE AND TEST API KEY
-    async function saveAndTestApiKey() {
-        const apiKeyInput = document.getElementById('apiKeyInput');
-        const newApiKey = apiKeyInput.value.trim();
-        
-        if (!newApiKey) {
-            showNotification('Please enter an API key', 'warning');
-            return;
-        }
-        
-        // Validate format
-        if (!newApiKey.startsWith('AIza') || newApiKey.length < 30) {
-            showNotification('Invalid API key format', 'warning');
-            return;
-        }
-        
-        // Show testing message
-        const testingDiv = document.createElement('div');
-        testingDiv.className = 'bot-message';
-        testingDiv.innerHTML = `
-            <div style="display: flex; align-items: center; gap: 10px;">
-                <div class="loading-spinner"></div>
-                <span>Testing API key...</span>
-            </div>
-        `;
-        botBody.appendChild(testingDiv);
-        
-        // Test the API key
-        const isValid = await testAPIKey(newApiKey);
-        
-        // Remove testing message
-        botBody.removeChild(testingDiv);
-        
-        if (isValid) {
-            // Save the key
-            GEMINI_API_KEY = newApiKey;
-            localStorage.setItem('flowtask_gemini_api_key', newApiKey);
-            userPreferences.useAI = true;
-            userPreferences.apiKeyValid = true;
-            savePreferences();
-            
-            showBotMessage("✅ API key saved and working! I can now use AI to help break down your tasks. 🤖");
-            showNotification('AI features enabled!', 'success');
-            
-            // Remove the API key input form
-            const apiKeyForm = document.querySelector('.bot-message:last-child');
-            if (apiKeyForm && apiKeyForm.contains(document.getElementById('apiKeyInput'))) {
-                botBody.removeChild(apiKeyForm);
-            }
+    // 🔑 REGULAR USER WELCOME MESSAGE
+    function showBotWelcomeMessage() {
+        if (userPreferences.useAI && userPreferences.apiKeyValid) {
+            showBotMessage("Hi! I'm your FlowTask Assistant with AI! 🤖 Ready to help you break down tasks.");
+        } else if (GEMINI_API_KEY && !userPreferences.apiKeyTested) {
+            // We have a key but haven't tested it yet
+            testAPIKey(GEMINI_API_KEY).then(isValid => {
+                if (isValid) {
+                    userPreferences.useAI = true;
+                    userPreferences.apiKeyValid = true;
+                    savePreferences();
+                    showBotMessage("Hi! I'm your FlowTask Assistant with AI! 🤖 Ready to help you break down tasks.");
+                    showNotification('✅ AI Assistant ready!', 'success');
+                } else {
+                    userPreferences.useAI = false;
+                    savePreferences();
+                    showBotMessage("Hi! I'm your FlowTask Assistant. I'll use smart rules to help break down your tasks.");
+                    showNotification('Using smart rules', 'info');
+                }
+            });
         } else {
-            showBotMessage("❌ API key failed. Please check your key and try again.");
-            showNotification('API key invalid', 'warning');
-            apiKeyInput.focus();
+            // No API key - regular mode
+            showBotMessage("Hi! I'm your FlowTask Assistant. I'll use smart rules to help break down your tasks.");
+        }
+    }
+    
+    // 🔑 ADD ADMIN BADGE TO HEADER
+    function addAdminBadge() {
+        const header = document.querySelector('.header h1');
+        if (header && userPreferences.isAdmin) {
+            const adminBadge = document.createElement('span');
+            adminBadge.className = 'ai-badge';
+            adminBadge.style.background = 'linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%)';
+            adminBadge.style.marginLeft = '10px';
+            adminBadge.textContent = 'ADMIN';
+            adminBadge.title = 'Admin Deployment - Environment API Key';
+            header.appendChild(adminBadge);
         }
     }
     
@@ -1576,7 +1600,7 @@
                         temperature: 0.1
                     }
                 }),
-                signal: AbortSignal.timeout(8000) // 8 second timeout
+                signal: AbortSignal.timeout(5000)
             });
             
             if (!testResponse.ok) {
@@ -1593,42 +1617,19 @@
         }
     }
     
-    // 🔑 SHOW WELCOME MESSAGE
-    function showBotWelcomeMessage() {
-        // Check if we have a valid API key stored
-        if (GEMINI_API_KEY && userPreferences.apiKeyValid && userPreferences.useAI) {
-            showBotMessage("Hi! I'm your FlowTask Assistant with AI! 🤖 I can help break down any task into manageable steps. Try adding a task!");
-        } else if (GEMINI_API_KEY) {
-            // We have a key but haven't tested it yet
-            testAPIKey(GEMINI_API_KEY).then(isValid => {
-                if (isValid) {
-                    userPreferences.useAI = true;
-                    userPreferences.apiKeyValid = true;
-                    savePreferences();
-                    showBotMessage("Hi! I'm your FlowTask Assistant with AI! 🤖 Ready to help you break down tasks.");
-                    showNotification('✅ AI Assistant ready!', 'success');
-                } else {
-                    userPreferences.useAI = false;
-                    savePreferences();
-                    showBotMessage("Hi! I'm your FlowTask Assistant. There's an issue with your saved API key. I'll use smart rules to help you.");
-                    showNotification('API key issue. Using smart rules.', 'warning');
-                }
-            });
-        } else {
-            // No API key - show input form
-            showApiKeyInput();
-        }
-    }
-    
     // AI BOT FUNCTIONS
     function toggleBotModal() {
         aiBotModal.classList.toggle('active');
         if (aiBotModal.classList.contains('active')) {
             aiBotToggle.classList.add('pulsing');
             
-            // If bot is empty, show welcome
-            if (botBody.children.length === 0) {
-                showBotWelcomeMessage();
+            // If admin deployment, don't show key input
+            if (userPreferences.isAdmin && botBody.children.length === 0) {
+                showBotMessage("**Admin Mode Active**\n\n" +
+                    "This deployment uses an environment API key.\n\n" +
+                    "• AI features: ✅ Enabled\n" +
+                    "• Key source: Environment variable\n" +
+                    "• Status: Ready to assist");
             }
         } else {
             aiBotToggle.classList.remove('pulsing');
@@ -1647,7 +1648,11 @@
                 </div>
             `;
         } else {
-            messageDiv.textContent = message;
+            // Convert markdown-like formatting
+            const formattedMessage = message
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\n/g, '<br>');
+            messageDiv.innerHTML = formattedMessage;
         }
         
         botBody.appendChild(messageDiv);
@@ -1677,14 +1682,6 @@
                     <i class="fas fa-times"></i> No, thanks
                 </button>
             </div>
-            ${hasAI ? '' : `
-            <div style="margin-top: 10px; padding: 8px; background: rgba(124, 58, 237, 0.1); border-radius: 6px; font-size: 0.85rem;">
-                <i class="fas fa-key" style="color: var(--primary);"></i>
-                <a href="#" id="enableAiLink" style="color: var(--primary); margin-left: 5px;">
-                    Enable AI features with an API key
-                </a>
-            </div>
-            `}
             ${userPreferences.showBotSuggestions ? `
             <div style="margin-top: 10px; font-size: 0.85rem; opacity: 0.7;">
                 <label>
@@ -1706,16 +1703,6 @@
             }
             showBotMessage("Okay! Let me know if you need help later. 👍");
         });
-        
-        // Add AI enable link
-        if (!hasAI && document.getElementById('enableAiLink')) {
-            document.getElementById('enableAiLink').addEventListener('click', (e) => {
-                e.preventDefault();
-                // Clear bot body and show API key input
-                botBody.innerHTML = '';
-                showApiKeyInput();
-            });
-        }
         
         // Show the bot modal
         aiBotModal.classList.add('active');
@@ -1779,7 +1766,7 @@
                         maxOutputTokens: 500
                     }
                 }),
-                signal: AbortSignal.timeout(10000) // 10 second timeout
+                signal: AbortSignal.timeout(10000)
             });
             
             if (!response.ok) {
@@ -1971,7 +1958,7 @@
         aiBotModal.classList.remove('active');
     }
     
-    // TASK MANAGEMENT FUNCTIONS
+    // TASK MANAGEMENT FUNCTIONS (same as before)
     function addNewTask() {
         const text = inputTask.value.trim();
         
@@ -2410,52 +2397,6 @@
         body.classList.add('night-mode');
         themeStatus.textContent = 'Night Mode';
     }
-    
-    // 🔑 Add API Key Management Button to Header
-    setTimeout(() => {
-        const header = document.querySelector('.header');
-        const apiKeyBtn = document.createElement('button');
-        apiKeyBtn.id = 'apiKeyManagerBtn';
-        apiKeyBtn.innerHTML = '<i class="fas fa-key"></i> API Key';
-        apiKeyBtn.style.cssText = `
-            position: absolute;
-            top: 10px;
-            left: 30px;
-            background: rgba(124, 58, 237, 0.1);
-            color: var(--primary);
-            border: 2px solid var(--primary);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        `;
-        
-        apiKeyBtn.addEventListener('mouseenter', () => {
-            apiKeyBtn.style.background = 'var(--primary)';
-            apiKeyBtn.style.color = 'white';
-        });
-        
-        apiKeyBtn.addEventListener('mouseleave', () => {
-            apiKeyBtn.style.background = 'rgba(124, 58, 237, 0.1)';
-            apiKeyBtn.style.color = 'var(--primary)';
-        });
-        
-        apiKeyBtn.addEventListener('click', () => {
-            // Open bot and show API key input
-            aiBotModal.classList.add('active');
-            aiBotToggle.classList.add('pulsing');
-            botBody.innerHTML = '';
-            showApiKeyInput();
-        });
-        
-        header.style.position = 'relative';
-        header.appendChild(apiKeyBtn);
-    }, 500);
 });
     </script>
 </body>
