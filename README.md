@@ -1,114 +1,125 @@
-📝 To-Do List Web Application
+🗂️ Task Management System
 
-A mobile-responsive web-based To-Do List application built using HTML, CSS, and JavaScript.  
-It helps users manage daily tasks with priority levels, persistent storage, real-time statistics, and motivational features.
+A desktop-optimized Task Management System built with Django (backend) and React (frontend).
+The application allows role-based task and project management for SuperManager, Manager, and Employee, enabling seamless task allocation and tracking across an organization.
 
---------------------------------------------------
+🚀 Live Demo
+Click Here
 
-🚀 Live Demo  
-https://todo-list-deployment-beta.vercel.app/
-
-💻 GitHub Repository  
-https://github.com/Lekashri-K/Todo_list_deployment
-
---------------------------------------------------
+💻 GitHub Repository
+Click Here
 
 📸 Screenshots
 
-🌙 Dark Mode  
+(Replace URLs with your actual images)
 
-<img src="https://github.com/user-attachments/assets/d1a209df-e663-46f9-8944-b161297a49ee" alt="Dark Mode" width="600">
+🌙 SuperManager Dashboard
+<img src="https://via.placeholder.com/700x400" alt="SuperManager Dashboard" width="700">
 
-🌞 Light Mode  
+📝 Manager Task Allocation
+<img src="https://via.placeholder.com/700x400" alt="Manager Dashboard" width="700">
 
-<img src="https://github.com/user-attachments/assets/62a9bc86-5977-4d7d-b2da-d5d78dba1807" alt="Light Mode" width="600">
-
---------------------------------------------------
+✅ Employee Task Status Update
+<img src="https://via.placeholder.com/700x400" alt="Employee Dashboard" width="700">
 
 🛠️ Technologies Used
-- HTML5
-- CSS
-- JavaScript
-- Web Storage API (LocalStorage)
-- Quotable API
-- ZenQuotes API
-- Stoic Quotes API
 
---------------------------------------------------
+Django (Backend & REST API)
+
+Django REST Framework
+
+React.js (Frontend)
+
+JavaScript
+
+SQLite (Database)
+
+JWT Authentication
+
+HTML5 & CSS3
 
 ✨ Features
 
-✅ Task Create, Read, Update, Delete operations  
-🔴 Task priority levels (High / Medium / Low)  
-💾 Persistent storage using LocalStorage  
-📊 Real-time task statistics  
-🌗 Day / Night theme toggle  
-💬 Daily motivational quotes  
-📱 Mobile-responsive design  
-🎨 Interactive animations  
+✅ Role-based access control: SuperManager, Manager, Employee
+✅ SuperManager Capabilities:
 
---------------------------------------------------
+Create users
+
+Create and assign projects to Managers
+
+Create tasks and assign to Users
+✅ Manager Capabilities:
+
+Assign tasks to Employees
+
+Track task progress within projects
+✅ Employee Capabilities:
+
+View assigned tasks
+
+Update task status (e.g., Pending, In Progress, Completed)
+✅ RESTful APIs for backend-frontend communication
+✅ Real-time updates via React
+✅ Desktop-optimized UI for task tracking and management
 
 ⚙️ How It Works
 
-Tasks are dynamically managed using JavaScript DOM manipulation.  
-Task data is stored using the Web Storage API to ensure persistence after page refresh.  
-Quotes are fetched asynchronously from external APIs.  
-UI updates happen in real time without page reload.
+Backend: Django REST Framework handles authentication, task/project CRUD, and role-based access.
 
---------------------------------------------------
+Frontend: React fetches APIs and dynamically renders dashboards for each role.
+
+Roles Workflow:
+
+SuperManager creates users and projects, assigns tasks to managers and users.
+
+Manager receives assigned projects and allocates tasks to employees.
+
+Employee updates the task status and tracks progress.
+
+Database: SQLite stores all users, projects, tasks, and roles efficiently.
 
 📂 Project Structure
 
-Todo_list_deployment/  
-index.html  
-style.css  
-script.js    
-README.md  
+Task_flow_deployment/
+├─ backend/           # Django backend
+│  ├─ manage.py
+│  ├─ app/
+│  └─ ...
+├─ frontend/          # React frontend
+│  ├─ src/
+│  ├─ public/
+│  └─ package.json
+├─ README.md
+└─ requirements.txt
 
---------------------------------------------------
 
 🧪 Run Locally
 
-1. Clone the repository  
-git clone https://github.com/Lekashri-K/Todo_list_deployment.git  
+Clone the repository
 
-2. Open index.html in your browser  
+git clone https://github.com/Lekashri-K/Task_flow_deployment.git
 
-3. Start managing your tasks 🚀  
 
---------------------------------------------------
+Setup Backend
+
+cd backend
+python -m venv venv
+source venv/bin/activate   # or venv\Scripts\activate on Windows
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+
+
+Setup Frontend
+
+cd frontend
+npm install
+npm start
+
+
+Open your browser at http://localhost:3000 and start managing tasks 🚀
 
 👩‍💻 Author
 
-Lekashri  
-[GitHub](https://github.com/Lekashri-K)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Leka Shri
+GitHub
