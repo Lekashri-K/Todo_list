@@ -11,17 +11,14 @@ It allows users to browse, purchase, and download digital books, with dynamic UI
 
 **📸 Screenshots**
 
-📸 Screenshots
-
 <table>
 <tr>
 <td><img src="https://github.com/user-attachments/assets/e65549fc-2654-41e5-a902-efc42fe74d2f" alt="Home Page" width="500"></td>
 <td><img src="https://github.com/user-attachments/assets/cfb7352c-54e8-4c61-9b71-7417383c1802" alt="Book Details" width="500"></td>
 </tr>
 <tr>
-<td align="center">Book Details</td>
 <td align="center">Home Page</td>
-
+<td align="center">Book Details</td>
 </tr>
 
 <tr>
@@ -32,8 +29,14 @@ It allows users to browse, purchase, and download digital books, with dynamic UI
 <td align="center">Admin Dashboard</td>
 <td align="center">Email Screenshot</td>
 </tr>
-</table>
 
+<tr>
+<td colspan="2"><img src="https://github.com/user-attachments/assets/b2841e1f-648b-4f88-b18d-af991971a2d0" alt="Category Page" width="500"></td>
+</tr>
+<tr>
+<td colspan="2" align="center">Category Page</td>
+</tr>
+</table>
 
 ---------------------------------
 
@@ -100,6 +103,7 @@ git clone https://github.com/Lekashri-K/Todo_list_deployment.git
 
 Lekashri  
 [GitHub](https://github.com/Lekashri-K)
+
 
 
 
