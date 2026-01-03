@@ -21,10 +21,10 @@ https://github.com/Lekashri-K/Task_flow_deployment
 <img src="https://github.com/user-attachments/assets/57f2d76a-7910-4bae-aca9-f554943d53eb" alt="SuperManager Dashboard" width="650">
 
 📝 Manager Task Allocation
-<img src="https://via.placeholder.com/700x400" alt="Manager Dashboard" width="700">
+<img width="1755" height="1951" alt="image" src="https://github.com/user-attachments/assets/f1ab4bcc-d247-4fe5-bec4-09b2e2273217" />
 
 ✅ Employee Task Status Update
-<img src="https://via.placeholder.com/700x400" alt="Employee Dashboard" width="700">
+<img width="1755" height="1542" alt="image" src="https://github.com/user-attachments/assets/6e9b52a9-39f4-4172-8b16-82d3b8af3ce2" />
 
 ---------------------------------
 
@@ -143,6 +143,7 @@ Project Structure
 
 Lekashri  
 [GitHub](https://github.com/Lekashri-K)
+
 
 
 
