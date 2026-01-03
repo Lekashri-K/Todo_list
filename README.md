@@ -13,15 +13,26 @@ It allows users to browse, purchase, and download digital books, with dynamic UI
 
 📸 Screenshots
 
-📸 Screenshots
+<table>
+<tr>
+<td><img src="https://github.com/user-attachments/assets/e65549fc-2654-41e5-a902-efc42fe74d2f" alt="Home Page" width="500"></td>
+<td><img src="https://github.com/user-attachments/assets/1fe562a6-d7de-490e-a206-cf09d4fcb332" alt="Admin Dashboard" width="500"></td>
+</tr>
+<tr>
+<td align="center">Home Page</td>
+<td align="center">Admin Dashboard</td>
+</tr>
 
-<img src="https://github.com/user-attachments/assets/e65549fc-2654-41e5-a902-efc42fe74d2f" alt="Home Page" width="600" height="800">
+<tr>
+<td><img src="https://github.com/user-attachments/assets/cfb7352c-54e8-4c61-9b71-7417383c1802" alt="Book Details" width="500"></td>
+<td><img src="https://github.com/user-attachments/assets/b1ecde01-cb18-4a85-8a37-082accd317b2" alt="Email Screenshot" width="500"></td>
+</tr>
+<tr>
+<td align="center">Book Details</td>
+<td align="center">Email Screenshot</td>
+</tr>
+</table>
 
-<img src="https://github.com/user-attachments/assets/1fe562a6-d7de-490e-a206-cf09d4fcb332" alt="Admin Dashboard" width="600" height="800">
-
-<img src="https://github.com/user-attachments/assets/cfb7352c-54e8-4c61-9b71-7417383c1802" alt="Book Details" width="600" height="800">
-
-<img src="https://github.com/user-attachments/assets/b1ecde01-cb18-4a85-8a37-082accd317b2" alt="Email Screenshot" width="500" height="400">
 
 ---------------------------------
 
@@ -88,6 +99,7 @@ git clone https://github.com/Lekashri-K/Todo_list_deployment.git
 
 Lekashri  
 [GitHub](https://github.com/Lekashri-K)
+
 
 
 
