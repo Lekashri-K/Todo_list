@@ -81,8 +81,9 @@ git clone https://github.com/Lekashri-K/Todo_list_deployment.git
 
 👩‍💻 Author
 
-Leka Shri  
-Web Developer
+Lekashri  
+[GitHub](https://github.com/Lekashri-K)
+
 
 
 
