@@ -11,10 +11,16 @@ It allows users to browse, purchase, and download digital books, with dynamic UI
 
 **📸 Screenshots**
 
-<img width="1755" height="3673" alt="image" src="https://github.com/user-attachments/assets/e65549fc-2654-41e5-a902-efc42fe74d2f" />
-<img width="1755" height="2594" alt="image" src="https://github.com/user-attachments/assets/1fe562a6-d7de-490e-a206-cf09d4fcb332" />
-<img width="1755" height="3314" alt="image" src="https://github.com/user-attachments/assets/cfb7352c-54e8-4c61-9b71-7417383c1802" />
-<img width="1102" height="818" alt="Screenshot (16)" src="https://github.com/user-attachments/assets/b1ecde01-cb18-4a85-8a37-082accd317b2" />
+📸 Screenshots
+
+<img src="https://github.com/user-attachments/assets/e65549fc-2654-41e5-a902-efc42fe74d2f" alt="Home Page" width="650">
+
+<img src="https://github.com/user-attachments/assets/1fe562a6-d7de-490e-a206-cf09d4fcb332" alt="Admin Dashboard" width="650">
+
+<img src="https://github.com/user-attachments/assets/cfb7352c-54e8-4c61-9b71-7417383c1802" alt="Book Details" width="650">
+
+<img src="https://github.com/user-attachments/assets/b1ecde01-cb18-4a85-8a37-082accd317b2" alt="Email Screenshot" width="650">
+
 
 ---------------------------------
 
@@ -81,6 +87,7 @@ git clone https://github.com/Lekashri-K/Todo_list_deployment.git
 
 Lekashri  
 [GitHub](https://github.com/Lekashri-K)
+
 
 
 
