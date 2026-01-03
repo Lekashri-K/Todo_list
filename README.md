@@ -3,7 +3,7 @@
 A desktop-optimized Task Management System built with Django (backend) and React (frontend).
 The application allows role-based task and project management for SuperManager, Manager, and Employee, enabling seamless task allocation and tracking across an organization.
 
---
+-------------
 
 🚀 Live Demo
 Click Here
@@ -27,3 +27,4 @@ Click Here
 <img src="https://via.placeholder.com/700x400" alt="Employee Dashboard" width="700">
 
 --
+
