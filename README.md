@@ -15,8 +15,15 @@ https://github.com/Lekashri-K/Task_flow_deployment
 
 📸 Screenshots
 
+<img width="1755" height="1831" alt="image" src="https://github.com/user-attachments/assets/ec8ca8a8-cc8a-42ba-98da-b4e4654dce0b" />
+
 🌙 SuperManager Dashboard
-<img src="https://via.placeholder.com/700x400" alt="SuperManager Dashboard" width="700">
+<img width="1755" height="979" alt="image" src="https://github.com/user-attachments/assets/57f2d76a-7910-4bae-aca9-f554943d53eb" />
+<img width="1755" height="840" alt="image" src="https://github.com/user-attachments/assets/40ccb368-1961-40f1-9aa0-4153ee24d155" />
+<img width="1755" height="1142" alt="image" src="https://github.com/user-attachments/assets/5b87caa6-de84-48a5-af57-52c41ca1f20c" />
+<img width="1755" height="1874" alt="image" src="https://github.com/user-attachments/assets/4aff42b1-0821-4c99-b651-a6257bfc7fcd" />
+<img width="1755" height="1174" alt="image" src="https://github.com/user-attachments/assets/fe3f995c-f79c-48d0-916c-6596b838b095" />
+
 
 📝 Manager Task Allocation
 <img src="https://via.placeholder.com/700x400" alt="Manager Dashboard" width="700">
@@ -141,6 +148,7 @@ Project Structure
 
 Lekashri  
 [GitHub](https://github.com/Lekashri-K)
+
 
 
 
