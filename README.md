@@ -11,7 +11,7 @@ Click Here
 💻 GitHub Repository
 Click Here
 
---
+-------------
 
 📸 Screenshots
 
@@ -26,5 +26,65 @@ Click Here
 ✅ Employee Task Status Update
 <img src="https://via.placeholder.com/700x400" alt="Employee Dashboard" width="700">
 
---
+----------------
+
+🛠️ Technologies Used
+
+Django (Backend & REST API)
+
+Django REST Framework
+
+React.js (Frontend)
+
+JavaScript
+
+SQLite (Database)
+
+JWT Authentication
+
+HTML & CSS
+
+-----------------
+
+✨ Features
+
+✅ Role-based access control: SuperManager, Manager, Employee
+✅ SuperManager Capabilities:
+
+Create users
+
+Create and assign projects to Managers
+
+Create tasks and assign to Users
+✅ Manager Capabilities:
+
+Assign tasks to Employees
+
+Track task progress within projects
+✅ Employee Capabilities:
+
+View assigned tasks
+
+Update task status (e.g., Pending, In Progress, Completed)
+✅ RESTful APIs for backend-frontend communication
+✅ Real-time updates via React
+✅ Desktop-optimized UI for task tracking and management
+
+----------------
+
+⚙️ How It Works
+
+Backend: Django REST Framework handles authentication, task/project CRUD, and role-based access.
+
+Frontend: React fetches APIs and dynamically renders dashboards for each role.
+
+Roles Workflow:
+
+SuperManager creates users and projects, assigns tasks to managers and users.
+
+Manager receives assigned projects and allocates tasks to employees.
+
+Employee updates the task status and tracks progress.
+
+Database: SQLite stores all users, projects, tasks, and roles efficiently.
 
