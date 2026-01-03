@@ -89,3 +89,56 @@ https://github.com/Lekashri-K/Task_flow_deployment
     - Employee: updates task status and tracks progress
 
 - Database: SQLite stores all users, projects, tasks, and roles efficiently
+
+---------------------------
+
+Project Structure
+
+Task_flow_deployment/
+├─ backend/           # Django backend
+│  ├─ manage.py
+│  ├─ app/
+│  └─ ...
+├─ frontend/          # React frontend
+│  ├─ src/
+│  ├─ public/
+│  └─ package.json
+├─ README.md
+└─ requirements.txt
+
+------------------------------------
+
+🧪 Run Locally
+
+1. Clone the repository
+
+git clone https://github.com/Lekashri-K/Task_flow_deployment.git
+
+
+2. Setup Backend
+
+cd backend
+python -m venv venv
+source venv/bin/activate   # or venv\Scripts\activate on Windows
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+
+
+3. Setup Frontend
+
+cd frontend
+npm install
+npm start
+
+
+4. Open your browser at http://localhost:3000 and start managing tasks 🚀
+
+-----------------------------
+
+👩‍💻 Author
+
+Leka Shri
+GitHub
+
+
