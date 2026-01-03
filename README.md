@@ -11,7 +11,7 @@ The application enables role-based task and project management for SuperManager,
 
 ---------------------------
 
-📸** Screenshots **
+**📸 Screenshots**
 
 <table>
 <tr>
@@ -43,7 +43,7 @@ The application enables role-based task and project management for SuperManager,
 
 ---------------------------------
 
-🛠️ Technologies Used
+**🛠️ Technologies Used** 
 
 - Django (Backend & REST API)
 
@@ -61,7 +61,7 @@ The application enables role-based task and project management for SuperManager,
 
 -----------------------------
 
-✨ Features
+**✨ Features** 
 
 ✅ Role-based access control: SuperManager, Manager, Employee
 
@@ -93,7 +93,7 @@ The application enables role-based task and project management for SuperManager,
 
 ----------------------
 
-⚙️ How It Works
+**⚙️ How It Works**  
 
 - Backend: Django REST Framework handles authentication, task/project CRUD, and role-based access.
 
@@ -111,7 +111,7 @@ The application enables role-based task and project management for SuperManager,
 
 ---------------------------
 
-Project Structure
+**📂 Project Structure** 
 
     Task_flow_deployment/
     ├─ backend/
@@ -126,7 +126,7 @@ Project Structure
 
 ------------------------------------
 
-🧪 Run Locally
+**🧪 Run Locally**  
 
 1. Clone the repository
 
@@ -154,10 +154,11 @@ Project Structure
 
 -----------------------------
 
-👩‍💻 Author
+**👩‍💻 Author**
 
 Lekashri  
 [GitHub](https://github.com/Lekashri-K)
+
 
 
 
