@@ -5,15 +5,13 @@ The application enables role-based task and project management for SuperManager,
 
 ----------------
 
-🚀 Live Demo
-https://task-flow-deployment.onrender.com/
+**🚀 Live Demo**: https://task-flow-deployment.onrender.com/
 
-💻 GitHub Repository
-https://github.com/Lekashri-K/Task_flow_deployment
+**💻 GitHub Repository**: https://github.com/Lekashri-K/Task_flow_deployment
 
 ---------------------------
 
-📸 Screenshots
+📸** Screenshots **
 
 <table>
 <tr>
@@ -160,6 +158,7 @@ Project Structure
 
 Lekashri  
 [GitHub](https://github.com/Lekashri-K)
+
 
 
 
