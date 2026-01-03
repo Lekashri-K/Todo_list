@@ -22,19 +22,19 @@ It allows users to browse, purchase, and download digital books, with dynamic UI
 </tr>
 
 <tr>
+<td><img src="https://github.com/user-attachments/assets/b2841e1f-648b-4f88-b18d-af991971a2d0" alt="Category Page" width="500"></td>
 <td><img src="https://github.com/user-attachments/assets/1fe562a6-d7de-490e-a206-cf09d4fcb332" alt="Admin Dashboard" width="500"></td>
-<td><img src="https://github.com/user-attachments/assets/b1ecde01-cb18-4a85-8a37-082accd317b2" alt="Email Screenshot" width="500"></td>
 </tr>
 <tr>
 <td align="center">Category Page</td>
-<td align="center">Email Screenshot</td>
+<td align="center">Admin Dashboard</td>
 </tr>
 
 <tr>
-<td colspan="2"><img src="https://github.com/user-attachments/assets/b2841e1f-648b-4f88-b18d-af991971a2d0" alt="Category Page" width="500"></td>
+<td colspan="2"><img src="https://github.com/user-attachments/assets/b1ecde01-cb18-4a85-8a37-082accd317b2" alt="Email Screenshot" width="500"></td>
 </tr>
 <tr>
-<td colspan="2" align="center">Admin Dashboard</td>
+<td colspan="2" align="center">Email Screenshot</td>
 </tr>
 </table>
 
@@ -103,6 +103,7 @@ git clone https://github.com/Lekashri-K/Todo_list_deployment.git
 
 Lekashri  
 [GitHub](https://github.com/Lekashri-K)
+
 
 
 
