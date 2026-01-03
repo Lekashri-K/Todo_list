@@ -44,9 +44,9 @@ https://github.com/Lekashri-K/Task_flow_deployment
 
 ✨ Features
 
-✅ Role-based access control: SuperManager, Manager, Employee
+- Role-based access control: SuperManager, Manager, Employee
 
-✅ SuperManager Capabilities:
+- SuperManager Capabilities:
 
     - Create users
 
@@ -54,23 +54,23 @@ https://github.com/Lekashri-K/Task_flow_deployment
 
     - Create tasks and assign to Users
 
-✅ Manager Capabilities:
+- Manager Capabilities:
 
     - Assign tasks to Employees
 
     - Track task progress within projects
 
-✅ Employee Capabilities:
+- Employee Capabilities:
 
     - View assigned tasks
 
     - Update task status (Pending, In Progress, Completed)
 
-✅ RESTful APIs for backend-frontend communication
+- RESTful APIs for backend-frontend communication
 
-✅ Real-time updates via React
+- Real-time updates via React
 
-✅ Desktop-optimized UI for task tracking and management
+- Desktop-optimized UI for task tracking and management
 
 ----------------------
 
@@ -140,6 +140,7 @@ Task_flow_deployment/
 
 Leka Shri
 GitHub
+
 
 
 
