@@ -1,156 +1,79 @@
-**🗂️ Task Management System**
+**📚 E-Book Management System**
 
-A desktop-optimized Task Management System built with Django (backend) and React (frontend).
-The application enables role-based task and project management for SuperManager, Manager, and Employee, allowing seamless task allocation and progress tracking.
+A full-stack eBook marketplace built with PHP, MySQL, HTML, CSS, and JavaScript.
+It allows users to browse, purchase, and download digital books, with dynamic UI updates and role-based access control.
 
 ----------------
 
-**🚀 Live Demo**: https://task-flow-deployment.onrender.com/
-
-**💻 GitHub Repository**: https://github.com/Lekashri-K/Task_flow_deployment
+**💻 GitHub Repository**:https://github.com/Lekashri-K/EBook_Management_System
 
 ---------------------------
 
 **📸 Screenshots**
 
-<table>
-<tr>
-<td>
-<img src="https://github.com/user-attachments/assets/ec8ca8a8-cc8a-42ba-98da-b4e4654dce0b" alt="Home Page" width="550">
-</td>
-<td>
-<img src="https://github.com/user-attachments/assets/57f2d76a-7910-4bae-aca9-f554943d53eb" alt="SuperManager Dashboard" width="550">
-</td>
-</tr>
-<tr>
-<td align="center">Home Page</td>
-<td align="center">SuperManager Dashboard</td>
-</tr>
-
-<tr>
-<td>
-<img src="https://github.com/user-attachments/assets/f1ab4bcc-d247-4fe5-bec4-09b2e2273217" alt="Manager Task Allocation" width="550">
-</td>
-<td>
-<img src="https://github.com/user-attachments/assets/6e9b52a9-39f4-4172-8b16-82d3b8af3ce2" alt="Employee Task Status Update" width="550">
-</td>
-</tr>
-<tr>
-<td align="center">Manager Task Allocation</td>
-<td align="center">Employee Task Status Update</td>
-</tr>
-</table>
+<img width="1755" height="3673" alt="image" src="https://github.com/user-attachments/assets/e65549fc-2654-41e5-a902-efc42fe74d2f" />
+<img width="1755" height="2594" alt="image" src="https://github.com/user-attachments/assets/1fe562a6-d7de-490e-a206-cf09d4fcb332" />
+![Uploading image.png…]()
+<img width="1102" height="818" alt="Screenshot (16)" src="https://github.com/user-attachments/assets/b1ecde01-cb18-4a85-8a37-082accd317b2" />
 
 ---------------------------------
 
 **🛠️ Technologies Used** 
 
-- Django (Backend & REST API)
+- PHP (Backend)
 
-- Django REST Framework
+- MySQL (Database)
 
-- React.js (Frontend)
+- HTML & CSS (Frontend)
 
-- JavaScript
+- JavaScript (Dynamic UI)
 
-- SQLite (Database)
-
-- JWT Authentication
-
-- HTML & CSS
+- PHPMailer (Automated Emails)
 
 -----------------------------
 
 **✨ Features** 
 
-✅ Role-based access control: SuperManager, Manager, Employee
+✅ Full-stack eBook marketplace functionality
 
-✅ SuperManager Capabilities:
+✅ User authentication and role-based access control (Admin/User)
 
-    - Create users
+✅ Admin dashboard with CRUD operations for books and categories
 
-    - Create and assign projects to Managers
+✅ Purchase-to-download workflow with secure access
 
-    - Create tasks and assign to Users
+✅ Automated email confirmations using PHPMailer
 
-✅ Manager Capabilities:
-
-    - Assign tasks to Employees
-
-    - Track task progress within projects
-
-✅ Employee Capabilities:
-
-    - View assigned tasks
-
-    - Update task status (Pending, In Progress, Completed)
-
-✅ RESTful APIs for backend-frontend communication
-
-✅ Real-time updates via React
-
-✅ Desktop-optimized UI for task tracking and management
+✅ Dynamic UI updates without page reload
 
 ----------------------
 
 **⚙️ How It Works**  
 
-- Backend: Django REST Framework handles authentication, task/project CRUD, and role-based access.
+Backend PHP handles database operations, authentication, and RBAC.
 
-- Frontend: React fetches APIs and dynamically renders dashboards for each role.
+Frontend HTML/CSS/JS dynamically displays books, categories, and order details.
 
-- Roles Workflow:
+PHPMailer triggers transactional emails on successful orders.
 
-    - SuperManager: creates users, projects, and tasks, assigning them to Managers and Employees
-
-    - Manager: allocates tasks to employees and monitors progress
-
-    - Employee: updates task status and tracks progress
-
-- Database: SQLite stores all users, projects, tasks, and roles efficiently
-
----------------------------
-
-**📂 Project Structure** 
-
-    Task_flow_deployment/
-    ├─ backend/
-    │  ├─ manage.py
-    │  └─ app/
-    ├─ frontend/
-    │  ├─ src/
-    │  └─ package.json
-    ├─ README.md
-    └─ .gitignore
-
+Admin can manage books, users, and categories via a centralized dashboard.
 
 ------------------------------------
 
 **🧪 Run Locally**  
 
-1. Clone the repository
+1. Clone the repository:
 
-    git clone https://github.com/Lekashri-K/Task_flow_deployment.git
-
-
-2. Setup Backend
-
-    cd backend
-    python -m venv venv
-    source venv/bin/activate   # or venv\Scripts\activate on Windows
-    pip install -r requirements.txt
-    python manage.py migrate
-    python manage.py runserver
+git clone https://github.com/Lekashri-K/Todo_list_deployment.git
 
 
-3. Setup Frontend
+2. Import the database in MySQL.
 
-    cd frontend
-    npm install
-    npm start
+3. Update db_connection.php with your local credentials.
 
+4. Open the project in XAMPP/WAMP/LAMP and run.
 
-4. Open your browser at http://localhost:3000 and start managing tasks 🚀
+5. Access via browser at: http://localhost/project_folder/
 
 -----------------------------
 
@@ -158,6 +81,7 @@ The application enables role-based task and project management for SuperManager,
 
 Lekashri  
 [GitHub](https://github.com/Lekashri-K)
+
 
 
 
