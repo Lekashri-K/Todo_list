@@ -96,30 +96,17 @@ https://github.com/Lekashri-K/Task_flow_deployment
 
 Project Structure
 
-Task_flow_deployment/
-├─ backend/               # Django backend
+```Task_flow_deployment/
+├─ backend/
 │  ├─ manage.py
 │  ├─ requirements.txt
-│  ├─ app/                # Django app folder
-│  │  ├─ migrations/
-│  │  ├─ models.py
-│  │  ├─ views.py
-│  │  ├─ serializers.py
-│  │  └─ urls.py
-│  └─ ...
-├─ frontend/              # React frontend
+│  └─ app/
+├─ frontend/
 │  ├─ public/
-│  │  ├─ index.html
-│  │  └─ ...
 │  ├─ src/
-│  │  ├─ components/
-│  │  ├─ pages/
-│  │  ├─ App.js
-│  │  ├─ index.js
-│  │  └─ ...
 │  └─ package.json
 ├─ README.md
-└─ .gitignore
+└─ .gitignore ```
 
 ------------------------------------
 
@@ -155,6 +142,7 @@ Task_flow_deployment/
 
 Lekashri  
 [GitHub](https://github.com/Lekashri-K)
+
 
 
 
