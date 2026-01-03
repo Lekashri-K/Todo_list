@@ -1,4 +1,4 @@
-🗂️ Task Management System
+**🗂️ Task Management System**
 
 A desktop-optimized Task Management System built with Django (backend) and React (frontend).
 The application enables role-based task and project management for SuperManager, Manager, and Employee, allowing seamless task allocation and progress tracking.
@@ -160,6 +160,7 @@ Project Structure
 
 Lekashri  
 [GitHub](https://github.com/Lekashri-K)
+
 
 
 
