@@ -112,24 +112,24 @@ Task_flow_deployment/
 
 1. Clone the repository
 
-git clone https://github.com/Lekashri-K/Task_flow_deployment.git
+    git clone https://github.com/Lekashri-K/Task_flow_deployment.git
 
 
 2. Setup Backend
 
-cd backend
-python -m venv venv
-source venv/bin/activate   # or venv\Scripts\activate on Windows
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver
+    cd backend
+    python -m venv venv
+    source venv/bin/activate   # or venv\Scripts\activate on Windows
+    pip install -r requirements.txt
+    python manage.py migrate
+    python manage.py runserver
 
 
 3. Setup Frontend
 
-cd frontend
-npm install
-npm start
+    cd frontend
+    npm install
+    npm start
 
 
 4. Open your browser at http://localhost:3000 and start managing tasks 🚀
@@ -140,5 +140,6 @@ npm start
 
 Leka Shri
 GitHub
+
 
 
