@@ -41,3 +41,51 @@ https://github.com/Lekashri-K/Task_flow_deployment
 - JWT Authentication
 
 - HTML & CSS
+
+✨ Features
+
+✅ Role-based access control: SuperManager, Manager, Employee
+
+✅ SuperManager Capabilities:
+
+    - Create users
+
+    - Create and assign projects to Managers
+
+    - Create tasks and assign to Users
+
+✅ Manager Capabilities:
+
+    - Assign tasks to Employees
+
+    - Track task progress within projects
+
+✅ Employee Capabilities:
+
+    - View assigned tasks
+
+    - Update task status (Pending, In Progress, Completed)
+
+✅ RESTful APIs for backend-frontend communication
+
+✅ Real-time updates via React
+
+✅ Desktop-optimized UI for task tracking and management
+
+----------------------
+
+⚙️ How It Works
+
+- Backend: Django REST Framework handles authentication, task/project CRUD, and role-based access.
+
+- Frontend: React fetches APIs and dynamically renders dashboards for each role.
+
+- Roles Workflow:
+
+    - SuperManager: creates users, projects, and tasks, assigning them to Managers and Employees
+
+    - Manager: allocates tasks to employees and monitors progress
+
+    - Employee: updates task status and tracks progress
+
+- Database: SQLite stores all users, projects, tasks, and roles efficiently
