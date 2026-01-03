@@ -96,17 +96,16 @@ https://github.com/Lekashri-K/Task_flow_deployment
 
 Project Structure
 
-```Task_flow_deployment/
-├─ backend/
-│  ├─ manage.py
-│  ├─ requirements.txt
-│  └─ app/
-├─ frontend/
-│  ├─ public/
-│  ├─ src/
-│  └─ package.json
-├─ README.md
-└─ .gitignore```
+    Task_flow_deployment/
+    ├─ backend/
+    │  ├─ manage.py
+    │  └─ app/
+    ├─ frontend/
+    │  ├─ src/
+    │  └─ package.json
+    ├─ README.md
+    └─ .gitignore
+
 
 ------------------------------------
 
@@ -142,6 +141,7 @@ Project Structure
 
 Lekashri  
 [GitHub](https://github.com/Lekashri-K)
+
 
 
 
