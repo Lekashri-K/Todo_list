@@ -16,14 +16,15 @@ https://github.com/Lekashri-K/Todo_list_deployment
 
 <table>
 <tr>
-<td><img src="https://github.com/user-attachments/assets/d1a209df-e663-46f9-8944-b161297a49ee" alt="Dark Mode" width="600"></td>
 <td><img src="https://github.com/user-attachments/assets/27e9cf82-186a-434f-b832-7423e346a969" alt="Light Mode" width="600"></td>
+<td><img src="https://github.com/user-attachments/assets/d1a209df-e663-46f9-8944-b161297a49ee" alt="Dark Mode" width="600"></td>
 </tr>
 <tr>
-<td align="center">Dark Mode</td>
 <td align="center">Light Mode</td>
+<td align="center">Dark Mode</td>
 </tr>
 </table>
+
 
 
 
