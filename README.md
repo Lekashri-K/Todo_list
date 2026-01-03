@@ -97,14 +97,14 @@ https://github.com/Lekashri-K/Task_flow_deployment
 Project Structure
 
 Task_flow_deployment/
-├─ backend/           # Django backend
-│  ├─ manage.py
-│  ├─ app/
-│  └─ ...
-├─ frontend/          # React frontend
-│  ├─ src/
-│  ├─ public/
-│  └─ package.json
+├─ backend/ # Django backend
+│ ├─ manage.py
+│ ├─ app/
+│ └─ ...
+├─ frontend/ # React frontend
+│ ├─ src/
+│ ├─ public/
+│ └─ package.json
 ├─ README.md
 └─ requirements.txt
 
@@ -142,6 +142,7 @@ Task_flow_deployment/
 
 Lekashri  
 [GitHub](https://github.com/Lekashri-K)
+
 
 
 
