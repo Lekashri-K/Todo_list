@@ -16,9 +16,11 @@ https://github.com/Lekashri-K/Todo_list_deployment
 📸 Screenshots
 
 🌙 Dark Mode  
+
 <img src="https://github.com/user-attachments/assets/d1a209df-e663-46f9-8944-b161297a49ee" alt="Dark Mode" width="600">
 
 🌞 Light Mode  
+
 <img src="https://github.com/user-attachments/assets/62a9bc86-5977-4d7d-b2da-d5d78dba1807" alt="Light Mode" width="600">
 
 --------------------------------------------------
@@ -81,6 +83,7 @@ git clone https://github.com/Lekashri-K/Todo_list_deployment.git
 
 Leka Shri  
 Web Developer
+
 
 
 
