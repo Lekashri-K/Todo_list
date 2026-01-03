@@ -93,7 +93,7 @@ git clone https://github.com/Lekashri-K/Todo_list_deployment.git
 
 3. Update db_connection.php with your local credentials.
 
-4. Open the project in XAMPP/WAMP/LAMP and run.
+4. Start the Appache and MySQL from XAMPP control panel.
 
 5. Access via browser at: http://localhost/project_folder/
 
@@ -103,6 +103,7 @@ git clone https://github.com/Lekashri-K/Todo_list_deployment.git
 
 Lekashri  
 [GitHub](https://github.com/Lekashri-K)
+
 
 
 
