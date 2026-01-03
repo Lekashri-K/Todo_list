@@ -17,8 +17,8 @@ https://github.com/Lekashri-K/Task_flow_deployment
 
 <table>
 <tr>
-<td><img src="https://github.com/user-attachments/assets/ec8ca8a8-cc8a-42ba-98da-b4e4654dce0b" width="420"></td>
-<td><img src="https://github.com/user-attachments/assets/57f2d76a-7910-4bae-aca9-f554943d53eb" width="420"></td>
+<td><img src="https://github.com/user-attachments/assets/ec8ca8a8-cc8a-42ba-98da-b4e4654dce0b" width="550"></td>
+<td><img src="https://github.com/user-attachments/assets/57f2d76a-7910-4bae-aca9-f554943d53eb" width="550"></td>
 </tr>
 <tr>
 <td align="center">Home Page</td>
@@ -26,14 +26,15 @@ https://github.com/Lekashri-K/Task_flow_deployment
 </tr>
 
 <tr>
-<td><img src="https://github.com/user-attachments/assets/f1ab4bcc-d247-4fe5-bec4-09b2e2273217" width="420"></td>
-<td><img src="https://github.com/user-attachments/assets/6e9b52a9-39f4-4172-8b16-82d3b8af3ce2" width="420"></td>
+<td><img src="https://github.com/user-attachments/assets/f1ab4bcc-d247-4fe5-bec4-09b2e2273217" width="550"></td>
+<td><img src="https://github.com/user-attachments/assets/6e9b52a9-39f4-4172-8b16-82d3b8af3ce2" width="550"></td>
 </tr>
 <tr>
 <td align="center">Manager Task Allocation</td>
 <td align="center">Employee Task Status Update</td>
 </tr>
 </table>
+
 
 
 ---------------------------------
@@ -153,6 +154,7 @@ Project Structure
 
 Lekashri  
 [GitHub](https://github.com/Lekashri-K)
+
 
 
 
