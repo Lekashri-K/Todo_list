@@ -106,7 +106,7 @@ Project Structure
 │  ├─ src/
 │  └─ package.json
 ├─ README.md
-└─ .gitignore '''
+└─ .gitignore```
 
 ------------------------------------
 
@@ -142,6 +142,7 @@ Project Structure
 
 Lekashri  
 [GitHub](https://github.com/Lekashri-K)
+
 
 
 
